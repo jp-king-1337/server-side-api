@@ -6,19 +6,21 @@
 
 // Try making the request with fetch() and jQuery ($.get())
 
-var baseURL = "https://swapi.dev/api/"
-var url = baseURL + "starships/"
+var baseURL = "https://api.giphy.com/v1/gifs/";
+var apiKey = `YV0aGSUKbpJiEmsSihIsu8tHNCjIH2Uk`;
+var url = baseURL + `random?api_key=${apiKey}&tag=elmo&rating=g`;
 
 function handleResponse(res) {
     return res.json();
 }
 
-function outputData(data) {
-    var xwing = (data.results[6]);
-    var p = document.createElement("p");
+function outputData(res) {
+    console.log(res.data);
+    // var xwing = (data.results[6]);
+    // var p = document.createElement("p");
 
-    p.innerText = xwing.name;
-    document.body.append(p);
+    // p.innerText = xwing.name;
+    // document.body.append(p);
 }
 
 // fetch(url)
